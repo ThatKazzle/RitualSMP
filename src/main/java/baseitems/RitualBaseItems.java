@@ -13,7 +13,7 @@ import java.util.Arrays;
 public class RitualBaseItems {
     RitualSMP plugin;
 
-    NamespacedKey ritualFragmentKey;
+    public static NamespacedKey ritualFragmentKey;
 
     public RitualBaseItems(RitualSMP plugin) {
         this.plugin = plugin;
@@ -21,7 +21,7 @@ public class RitualBaseItems {
         ritualFragmentKey = new NamespacedKey(plugin, "ritual_fragment");
     }
 
-    public ItemStack getRitualFragment() {
+    public static ItemStack getRitualFragment() {
         ItemStack item = new ItemStack(Material.AMETHYST_SHARD);
 
         ItemMeta meta = item.getItemMeta();
