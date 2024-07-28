@@ -1,0 +1,4 @@
+name: RitualSMP
+version: '1.0'
+main: org.kazzleinc.ritualSMP.RitualSMP
+api-version: '1.20'
