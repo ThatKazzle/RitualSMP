@@ -25,6 +25,6 @@ public final class RitualSMP extends JavaPlugin implements Listener {
     public void onPlauerDeathEvent(PlayerDeathEvent event) {
         Player player = event.getPlayer();
 
-        player.getWorld().dropItemNaturally(player.getLocation(), baseItemsClass.getRitutalFragment());
+        player.getWorld().dropItemNaturally(player.getLocation(), baseItemsClass.getRitualFragment());
     }
 }

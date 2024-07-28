@@ -21,14 +21,14 @@ public class RitualBaseItems {
         ritualFragmentKey = new NamespacedKey(plugin, "ritual_fragment");
     }
 
-    public ItemStack getRitutalFragment() {
+    public ItemStack getRitualFragment() {
         ItemStack item = new ItemStack(Material.AMETHYST_SHARD);
 
         ItemMeta meta = item.getItemMeta();
 
         meta.setDisplayName("" + ChatColor.RED + ChatColor.BOLD + "Ritual Fragment");
 
-        meta.setLore(Arrays.asList("" + ChatColor.RED + "a " + ChatColor.BOLD + "Ritual Fragment" + ChatColor.RESET + ChatColor.RED + ", gained by killing a player.", ChatColor.RED + " - This item can be used to craft special items."));
+        meta.setLore(Arrays.asList("", "" + ChatColor.RED + "a " + ChatColor.BOLD + "Ritual Fragment" + ChatColor.RESET + ChatColor.RED + ", gained by killing a player.", ChatColor.RED + " - This item can be used to craft special items."));
 
         meta.getPersistentDataContainer().set(ritualFragmentKey, PersistentDataType.BOOLEAN, true);
 
