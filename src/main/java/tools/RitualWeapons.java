@@ -1,10 +1,7 @@
 package tools;
 
 import com.google.common.collect.Multimap;
-import org.bukkit.ChatColor;
-import org.bukkit.Material;
-import org.bukkit.NamespacedKey;
-import org.bukkit.Particle;
+import org.bukkit.*;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
@@ -34,7 +31,7 @@ public class RitualWeapons {
         ItemMeta meta = item.getItemMeta();
 
         meta.setDisplayName("" + ChatColor.RED + ChatColor.BOLD + "Ritual Blade");
-        meta.setLore(Arrays.asList("", ChatColor.RED + "The " + ChatColor.BOLD + "Ritual Blade" + ChatColor.RESET + ChatColor.RED + " allows you to (TBD)"));
+        meta.setLore(Arrays.asList("", ChatColor.GOLD + "The " + ChatColor.BOLD + "Ritual Blade" + ChatColor.RESET + ChatColor.GOLD + " allows you to (TBD)"));
         meta.getPersistentDataContainer().set(ritualBladeKey, PersistentDataType.BOOLEAN, true);
 
         meta.addEnchant(Enchantment.DAMAGE_ALL, 5, false);
@@ -47,11 +44,16 @@ public class RitualWeapons {
 
 
     public void RitualBladeAction(Player player) {
+        player.getWorld().playSound(player.getLocation(), Sound.ENTITY_BLAZE_SHOOT, 1.f, 1.f);
         ParticleUtils.createParticleLine(player.getEyeLocation(), player.getEyeLocation().getDirection(), 30, 3, Particle.FLAME);
 
         Player targetPlayer = PlayerTracer.getTargetPlayer(player);
 
         if (targetPlayer != null && player.getLocation().distance(targetPlayer.getLocation()) < 30) {
+            player.setCooldown(Material.NETHERITE_SWORD, 20);
+
+            targetPlayer.damage(3.5);
+
             player.sendActionBar(ChatColor.YELLOW + "You hit " + ChatColor.BOLD + targetPlayer.getName() + ChatColor.RESET + "" + ChatColor.YELLOW + "!");
         } else {
             player.sendActionBar(ChatColor.RED + "No players were hit.");
