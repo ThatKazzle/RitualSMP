@@ -1,6 +1,7 @@
 package tools;
 
 import baseitems.RitualBaseItems;
+import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.inventory.ShapedRecipe;
@@ -15,6 +16,8 @@ public class RitualRecipes {
         this.plugin = plugin;
 
         ritualBladeRecipeKey = new NamespacedKey(plugin, "ritual_blade_recipe");
+
+        createRitualBladeRecipe();
     }
 
     public void createRitualBladeRecipe() {
@@ -23,5 +26,7 @@ public class RitualRecipes {
 
         bladeRecipe.setIngredient('F', RitualBaseItems.getRitualFragment());
         bladeRecipe.setIngredient('S', Material.STICK);
+
+        Bukkit.addRecipe(bladeRecipe);
     }
 }

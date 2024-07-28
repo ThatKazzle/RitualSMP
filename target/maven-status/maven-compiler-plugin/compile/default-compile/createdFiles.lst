@@ -1,2 +1,6 @@
-baseitems\RitualBaseItems.class
 org\kazzleinc\ritualSMP\RitualSMP.class
+baseitems\RitualBaseItems.class
+tools\RitualRecipes.class
+org\kazzleinc\ritualSMP\ParticleUtils.class
+tools\RitualWeapons.class
+org\kazzleinc\ritualSMP\PlayerTracer.class
