@@ -16,7 +16,7 @@ public class ParticleUtils {
         World world = startLocation.getWorld();
         if (world == null) return;
 
-        // Normalize the direction vector to ensure it's a unit vector
+        // Normalize the direction vector to ensure it's a unit vecto
         direction = direction.normalize();
 
         // Calculate the total number of particles based on distance and density
