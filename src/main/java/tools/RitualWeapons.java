@@ -34,7 +34,7 @@ public class RitualWeapons {
         meta.setLore(Arrays.asList("", ChatColor.GOLD + "The " + ChatColor.BOLD + "Ritual Blade" + ChatColor.RESET + ChatColor.GOLD + " allows you to (TBD)"));
         meta.getPersistentDataContainer().set(ritualBladeKey, PersistentDataType.BOOLEAN, true);
 
-        meta.addEnchant(Enchantment.DAMAGE_ALL, 5, false);
+        meta.addEnchant(Enchantment.SHARPNESS, 5, false);
         //§c is red character
 
         item.setItemMeta(meta);
